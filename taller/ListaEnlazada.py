@@ -53,3 +53,15 @@ class ListaEnlazada:
             actual = actual.siguiente
             indice += 1
         return None         
+
+    def buscarPorId(self, identifier):
+        actual = self.cabeza
+        indice = 0
+        while actual is not None:
+            if self.buscarPorPosicion(indice).identifier == identifier:
+                return self.buscarPorPosicion(indice)
+            actual = actual.siguiente
+            indice += 1
+        return None
+
+    def eliminarPorId(self, indentifier):
