@@ -1,0 +1,5 @@
+* PROGRA 3 CLASE 2
+
+** Listas enlazadas
+- Nodos conectados que guardan informacion
+- punteros

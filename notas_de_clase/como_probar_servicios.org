@@ -1,0 +1,7 @@
+; GET
+curl http://127.0.0.1:5000/mensaje
+
+; POST
+curl -X POST http://127.0.0.1:5000/agregarAlInicio -H "Content-Type: application/json" -d '{"name": "Pepito", "edad":18, "identificacion":"1231254"}'
+
+; Se usa curl, la url depende del proyecto.

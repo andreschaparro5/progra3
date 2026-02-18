@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>progra 3</title>
+  </head>
+  <body>
+    <h1>Lista de Vehiculos</h1>
+    <table>
+      <thead>
+	<th>Modelo</th>
+	<th>Marca</th>
+	<th>Color</th>
+	<th>Placa</th>
+      </thead>
+      <tbody id="cuerpo-tabla">
+      </tbody>
+    </table>
+    <script>
+      async function obtenerDatos() {
+	  console.log("se esta ejecutando");
+	  respuesta = await fetch('http://127.0.0.1:5000/listarVehiculos');
+	  datos = await respuesta.json();
+	  console.log(datos);
+	  cuerpoTabla = document.getElementById('cuerpo-tabla');
+	  cuerpoTabla.innerHTML = "";
+	  
+	  datos.forEach(vehiculo => {
+	      fila = document.createElement("tr");
+	      fila.innerHTML = `<td>${vehiculo.modelo}</td><td>${vehiculo.marca}</td><td>${vehiculo.color}</td><td>${vehiculo.placa}</td>`;
+	      cuerpoTabla.appendChild(fila);
+	  });
+      }
+
+      document.addEventListener('DOMContedLoaded', obtenerDatos());
+    </script>
+  </body>
+</html>

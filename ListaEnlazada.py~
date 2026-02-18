@@ -1,0 +1,33 @@
+from NodoLista import Nodo
+
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None
+
+    def esta_vacia(self):
+        return self.cabeza is None
+
+    def agregar_al_frente(self, informacion):
+        nuevo_nodo = Nodo(informacion)
+        nuevo_nodo.siguiente = self.cabeza
+        self.cabeza = nuevo_nodo
+
+    def agregar_al_final(self, informacion):
+        nuevo_nodo = Nodo(informacion)
+
+        if self.esta_vacia():
+            self.cabeza = nuevo_nodo
+        else:
+            actual = self.cabeza
+            while actual.siguiente is not None:
+                
+                actual = actual.siguiente
+            actual.siguiente = nuevo_nodo
+
+    def imprimir_lista(self):
+        actual = self.cabeza
+        while actual is not None:
+            print(actual.informacion, end=" -> ")
+            actual = actual.siguiente
+        print("None")
+        

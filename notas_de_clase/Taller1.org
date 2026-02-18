@@ -1,0 +1,23 @@
+
+*Taller 1
+
+1. Desarrollar los siguientes servicios de listas enlazadas
+2. Crear, leer, actualizar y eliminar un nodo de la lista enlazada
+3. Integrar busqueda por id
+4. Probar servicios por postman
+5. Documento de servicios
+
+Eje 1: para cada servicio una ficha tecnica
+
++-------------------------+
+| path | 127.000.1/listar |
++-------------------------+
+| Tipo | GET              |
++-------------------------+
+| Retorna | [asdasd...], json |
++-----------------------------+
+| parametro |
+|           |
+
+
+
