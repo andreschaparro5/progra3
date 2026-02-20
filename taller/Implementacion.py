@@ -7,10 +7,6 @@ app = Flask(__name__)
 CORS(app)
 lista_carros = ListaEnlazada()
 
-@app.route('/mensaje',methods=['GET'])
-def mensaje():
-    return jsonify({'mensaje': 'Listas Enlazadas'})
-
 @app.route('/agregarAlInicio', methods=['POST'])
 def agregarAlInicio():
     datos = request.get_json()
