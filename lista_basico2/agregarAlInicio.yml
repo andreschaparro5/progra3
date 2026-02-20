@@ -1,19 +1,38 @@
-Este metodo se encarga de recibir un json con los datos de un estudiante
 ---
-definitions:
-  Palette:
-    type: object
-    properties:
-      palette_name:
-        type: array
-        items:
-          $ref: '#/definitions/Color'
-  Color:
-    type: void
+tags:
+  - Estudiantes
+summary: Agregar estudiante al inicio de la lista enlazada
+description: Recibe los datos de un estudiante y lo agrega al inicio de la lista enlazada.
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - nombre
+        - edad
+        - identificacion
+      properties:
+        nombre:
+          type: string
+          example: Andres
+        edad:
+          type: integer
+          example: 20
+        identificacion:
+          type: string
+          example: "123456789"
 responses:
   200:
-    description: Send the data of student in json
+    description: Estudiante agregado correctamente
     schema:
-      $ref: '#/definitions/Palette'
-    examples:
-      rgb: ['red', 'green', 'blue']
+      type: object
+      properties:
+        mensaje:
+          type: string
+          example: Estudiante agregado correctamente
+  400:
+    description: Datos inválidos

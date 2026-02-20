@@ -1,28 +1,22 @@
-
-Example endpoint returning a list of colors by palette
-In this example the specification is taken from external YAML file
 ---
-parameters:
-  - name: palette
-    in: path
-    type: string
-    enum: ['all', 'rgb', 'cmyk']
-    required: true
-    default: all
-definitions:
-  Palette:
-    type: object
-    properties:
-      palette_name:
-        type: array
-        items:
-          $ref: '#/definitions/Color'
-  Color:
-    type: string
+tags:
+  - Estudiantes
+summary: Mostrar lista enlazada
+description: Retorna todos los estudiantes almacenados en la lista enlazada.
 responses:
   200:
-    description: A list of colors (may be filtered by palette)
+    description: Lista de estudiantes
     schema:
-      $ref: '#/definitions/Palette'
-    examples:
-      rgb: ['red', 'green', 'blue']
+      type: array
+      items:
+        type: object
+        properties:
+          nombre:
+            type: string
+            example: Andres
+          edad:
+            type: integer
+            example: 20
+          identificacion:
+            type: string
+            example: "123456789"
