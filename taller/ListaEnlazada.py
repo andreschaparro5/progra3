@@ -64,4 +64,49 @@ class ListaEnlazada:
             indice += 1
         return None
 
-    def eliminarPorId(self, indentifier):
+    def actualizar(self, identifier, nueva_informacion):
+        actual = self.cabeza
+
+        while actual is not None:
+            if actual.informacion.identifier == identifier:
+                actual.informacion = nueva_informacion
+                return True
+            actual = actual.siguiente
+
+        return False        
+        
+    def eliminarPorId(self, identifier):
+        if self.esta_vacia():
+            return False
+
+        actual = self.cabeza
+        anterior = None
+
+        while actual is not None:
+            if actual.informacion.identifier == identifier:
+            
+                if anterior is None:
+                    self.cabeza = actual.siguiente
+                else:
+                    anterior.siguiente = actual.siguiente
+
+                return True  
+
+            anterior = actual
+            actual = actual.siguiente
+
+        return False  
+    
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+            

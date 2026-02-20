@@ -6,4 +6,11 @@ curl http://127.0.0.1:5000/listaEnlazada
 ; POST
 curl -X POST http://127.0.0.1:5000/agregarAlInicio -H "Content-Type: application/json" -d '{"identifier": 5, "marca": "BYD", "precio": 3093, "placa": "JDK"}'
 
+; PUT
+curl -X PUT http://127.0.0.1:5000/actualizar -H "Content-Type: application/json" -d '{"identifier": 5, "marca": "BYD", "precio": 3093, "placa": "JDK"}'
+
+; DELETE
+curl -X DELETE http://127.0.0.1:5000/eliminar -H "Content-Type: application/json" -d '{"identifier": 5}'
+
+
 ; Se usa curl, la url depende del proyecto.

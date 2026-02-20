@@ -1,0 +1,19 @@
+Este metodo se encarga de recibir un json con los datos de un estudiante
+---
+definitions:
+  Palette:
+    type: object
+    properties:
+      palette_name:
+        type: array
+        items:
+          $ref: '#/definitions/Color'
+  Color:
+    type: void
+responses:
+  200:
+    description: Send the data of student in json
+    schema:
+      $ref: '#/definitions/Palette'
+    examples:
+      rgb: ['red', 'green', 'blue']
