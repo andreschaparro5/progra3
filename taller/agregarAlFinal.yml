@@ -1,0 +1,42 @@
+---
+tags:
+  - Carros
+summary: Agregar carro al final de la lista enlazada
+description: Recibe los datos de un carro y lo agrega al final de la lista enlazada.
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - identifier
+        - marca
+        - precio
+        - placa
+      properties:
+        identifier:
+          type: integer
+          example: 5
+        marca:
+          type: string
+          example: "BYD"
+        precio:
+          type: integer
+          example: 4000
+        placa:
+          type: string
+          example: "JDK-2134"      
+responses:
+  200:
+    description: Carro agregado correctamente al final
+    schema:
+      type: object
+      properties:
+        mensaje:
+          type: string
+          example: Carro agregado correctamente al final
+  400:
+    description: Datos inválidos

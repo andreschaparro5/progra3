@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=co.edu.uptc -DartifactId=arboles -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false

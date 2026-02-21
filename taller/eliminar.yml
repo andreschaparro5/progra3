@@ -1,0 +1,42 @@
+---
+tags:
+  - Carros
+summary: Elimina un carro
+description: Elimina un carro por su id y retorna la lista de carror para verificar.
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - identifier
+      properties:
+        identifier:
+          type: integer
+          example: 5
+
+responses:
+  200:
+    description: Lista de carros
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          identifier:
+            type: integer
+            example: 5
+          marca:
+            type: string
+            example: "BYD"
+          precio:
+            type: integer
+            example: 30920
+          placa:
+            type: string
+            example: "JDK-213"
+  400:
+    description: Datos inválidos

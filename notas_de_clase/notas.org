@@ -3,3 +3,7 @@
 ** Listas enlazadas
 - Nodos conectados que guardan informacion
 - punteros
+
+Arboles binarios
+
+En orden (inorder, inorder)
